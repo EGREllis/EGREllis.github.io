@@ -1,6 +1,38 @@
 <html>
-	<head><title>Test page</title></head>
-	<body>
+	<head>
+		<title>Test page</title>
+		<script>
+			var spells = [
+				{name: "Acid Splash", level: 0, school: "Conjuration", damage:""},
+				{name: "Blade Ward", level: 0, school: "Blade Ward", damage:""},
+				{name: "Chill Touch", level: 0, school: "Necromancy", damage:""},
+				{name: "Dancing Lights", level: 0, school: "Evocation", damage: ""},
+				{name: "Fire bolt", level: 0, school: "Evocation", damage: "1d10", die: "1d10"}
+				];
+
+			function selectSpell() {
+				var html = "<select id='spells'>";
+				for (var i = 0; i < spells.length; i++) {
+					html += "<option value='"+i+"'"++"";
+				}
+				html += "</select>";
+
+				var ele = document.getElementById('spellSelect');
+				ele.innerHTML = html;
+			}
+
+			function initPage() {
+				selectSpell();
+			}
+		</script>
+	</head>
+	<body onload="initPage()">
 		<p>This is a test page for git pages!<p>
+		<form>
+			<table>
+				<tr><th>Character name:</th><th>Spell</th></tr>
+				<tr><td><input type="text" id="cName" /></td><td><div id="spellSelect" /></td></tr>
+			</table>
+		</form>
 	</body>
 </html>
