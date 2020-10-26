@@ -19,13 +19,12 @@
 					html += "<option value='"+i+"'"++"";
 				}
 				html += "</select>";
-
-				var ele = document.getElementById('spellSelect');
-				ele.innerHTML = html;
+				return html;
 			}
 
 			function initPage() {
-				selectSpell();
+				var ele = document.getElementById("spellSelect");
+				ele.innerHTML = selectSpell();
 			}
 		</script>
 	</head>
@@ -34,7 +33,7 @@
 		<form>
 			<table>
 				<tr><th>Character name:</th><th>Spell</th></tr>
-				<tr><td><input type="text" id="cName" /></td><td><div id="spellSelect" /></td></tr>
+				<tr><td><input type="text" id="cName" /></td><td><div id="spellSelect"></div></td></tr>
 			</table>
 		</form>
 	</body>
